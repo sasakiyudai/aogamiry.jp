@@ -1,0 +1,109 @@
+.container {
+    box-sizing:border-box;
+    @include mobile {
+        padding: vw_mobile(20);
+        margin-bottom: vw_mobile(150);
+        width: 100%;
+    }
+    @include pc {
+        padding: vw_pc(20) vw_pc(40);
+        margin-bottom: vw_pc(180);
+    }
+    .top {
+        .title {
+            font-weight: $bold;
+            letter-spacing: 0.3rem;
+            @include mobile {
+                display: block;
+                @include font-size_mobile(30);
+            }
+            @include pc {
+                display: flex;
+                align-items: center;
+                @include font-size_pc(50);
+            }
+            span {
+                @include mobile {
+                    display: block;
+                    margin-top: vw_mobile(10);
+                    @include font-size_mobile(22);
+                }
+                @include pc {
+                    margin-left: vw_pc(70);
+                    @include font-size_pc(20);
+                    padding: vw_pc(15) 0;
+                }
+                position: relative;
+                &:before {
+                    content: '';
+                    @include pc {
+                        position: absolute;
+                        left: vw_pc(-60);
+                        bottom: vw_pc(27.5);
+                        width: vw_pc(50);
+                        background-color: $black;
+                        border: 0.5px solid $black;
+                    }
+    
+                }
+            }
+        }
+    }
+    .bottom {
+        @include mobile {
+            padding-top: vw_mobile(20);
+            padding-bottom: vw_mobile(30);
+        }
+        @include pc {
+            padding-top: vw_pc(20);
+            padding-bottom: vw_pc(50);
+            display: flex;
+        }
+        &__left {
+            @include pc {
+                width: 50%;
+            }
+            @include mobile {
+                width: 100%;
+            }
+            p {
+                line-height: 1.4;
+                font-weight: $bold;
+                @include mobile {
+                    font-weight: $medium;
+                    @include font-size_mobile(16);
+                }
+                @include pc {
+                    @include font-size_pc(18);
+                }
+            }
+        }
+        &__right {
+            @include pc {
+                width: 50%;
+            }
+            @include mobile {
+                width: 100%;
+            }
+            position: relative;
+            .button {
+                @include mobile {
+                    margin-top: vw_mobile(50);
+                    margin-bottom: vw_mobile(30);
+                }
+                @include pc {
+                    position: absolute;
+                    right: 0;
+                }
+            }
+        }
+    }
+    .content {
+        @include mobile {
+        }
+        @include pc {
+            margin-top: vw_pc(20);
+            padding: 0 vw_pc(50);
+        }
+    }
+}
